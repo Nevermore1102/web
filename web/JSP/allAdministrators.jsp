@@ -16,7 +16,7 @@
 <div class="login">
     <div class="account">
         <form action="#" method="post" onsubmit="return check_form();">
-            <div class="logo">师生登录界面</div>
+            <div class="logo">系统管理员管理界面</div>
             <div class="login_btn">
                 <input id="login-button" value="登录" type="submit">
             </div>
