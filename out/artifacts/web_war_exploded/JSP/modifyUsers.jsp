@@ -17,6 +17,13 @@
     <div class="account">
         <form action="#" method="post" onsubmit="return check_form();">
             <div class="logo">系统管理员信息管理界面</div>
+
+        <form action="<%=path%>/JSP/add.jsp" method="post">
+            <div class="login_btn">
+                <input id="addUsers" value="信息导入" type="submit">
+            </div>
+        </form>
+            <div class="logoSmall">信息修改</div>
             <div class="line">
                 <input class="inputtxt" value name="college" id="college" datatype="*"
                        nullmsg="请填写学院" placeholder="学院" type="text">
