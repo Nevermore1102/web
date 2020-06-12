@@ -22,14 +22,14 @@
 
             </div>
         </form>
-        <form action="<%=path%>/JSP/add.jsp" method="post">
-            <div class="login_btn">
-                <input id="addData" value="导入师生数据" type="submit">
-            </div>
-        </form>
         <form action="<%=path%>/JSP/searchUsers.jsp" method="post">
             <div class="login_btn">
                 <input id="数据查询" value="师生打卡情况查询" type="submit">
+            </div>
+        </form>
+        <form action="<%=path%>/JSP/showAllUsersHealthyCode.jsp" method="post">
+            <div class="login_btn">
+                <input id="全校打卡情况统计" value="全校打卡情况统计" type="submit">
             </div>
         </form>
     </div>
