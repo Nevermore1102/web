@@ -5,4 +5,8 @@
 		  http://java.sun.com/xml/ns/javaee/web-app_4_0.xsd"
            version="4.0">
 
+    <servlet>
+        <servlet-name>loginServlet</servlet-name>
+        <servlet-class>com.controller.loginServlet</servlet-class>
+    </servlet>
 </web-app>
