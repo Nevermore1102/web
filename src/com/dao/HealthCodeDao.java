@@ -125,4 +125,40 @@ public class HealthCodeDao extends Basedao{
             return null;
         }
     }
+    //删除老师
+    public boolean deleteTeacher(String name){
+        String sql = "DELETE FROM teachers WHERE name=?";
+        try(Connection conn = dataSource.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql)){
+            pstmt.setString(1,name);
+            if(pstmt.executeUpdate() > 0){
+                return true;
+            }
+        }catch (SQLException se){
+            se.printStackTrace();
+            return false;
+        }
+        return false;
+    }
+    //修改教师
+    public boolean modifyTeacher(Teacher teacher){
+        String sql = "UPDATE teachers SET id=?,school_id=?,college=?,role=?, attendenceRecord=?,password=?,healthday=?,healthcode=? WHERE name=?";
+        try(Connection conn = dataSource.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql)){
+            pstmt.setString(1,teacher.getId());
+            pstmt.setString(2,teacher.getSchool_id());
+            pstmt.setString(3,teacher.getCollege());
+            pstmt.setString(4,teacher.getRole());
+            pstmt.setString(5,teacher.getAttendenceRecord());
+            pstmt.setString(6,teacher.getPassword());
+            pstmt.setInt(7,teacher.getHealthday());
+            pstmt.setString(8,teacher.getHealthcode());
+            pstmt.setString(9,teacher.getName());
+            pstmt.executeUpdate();
+            return true;
+        }catch (SQLException se){
+            se.printStackTrace();
+            return false;
+        }
+    }
 }
