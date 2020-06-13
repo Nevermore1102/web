@@ -161,4 +161,24 @@ public class HealthCodeDao extends Basedao{
             return false;
         }
     }
+    public boolean addTeacher(Teacher teacher){
+        String sql = "INSERT INTO teachers" + "(name,id,school_id,college,role,attendenceRecord,password,healthday,healthcode)VALUES(?,?,?,?,?)";
+        try(Connection conn = dataSource.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql)){
+            pstmt.setString(1,teacher.getName());
+            pstmt.setString(2,teacher.getId());
+            pstmt.setString(3,teacher.getSchool_id());
+            pstmt.setString(4,teacher.getCollege());
+            pstmt.setString(5,teacher.getRole());
+            pstmt.setString(6,teacher.getAttendenceRecord());
+            pstmt.setString(7,teacher.getPassword());
+            pstmt.setInt(8,teacher.getHealthday());
+            pstmt.setString(9,teacher.getHealthcode());
+            pstmt.executeUpdate();
+            return true;
+        }catch (SQLException se){
+            se.printStackTrace();
+            return false;
+        }
+    }
 }
