@@ -6,6 +6,10 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%String path = request.getContextPath();%>
+<%String college= (String) request.getAttribute("college");%>
+<%System.out.println(college);%>
+
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -16,9 +20,10 @@
 <div class="login">
     <div class="account">
         <div class="logo">院级管理员管理界面</div>
-        <form action="<%=path%>/JSP/showAllMajorHealthyCode.jsp" method="post">
+        <form action="majordataStatisticServlet" method="post">
             <div class="login_btn">
-                <input id="专业打卡情况统计" value="本专业打卡情况统计" type="submit">
+                <input id="college" name="college" value="<%=request.getAttribute("college")%>" style="display: none" readonly>
+                <input id="专业打卡情况统计" value="本专业打卡情况统计" type="submit" >
             </div>
         </form>
         <form action="<%=path%>/JSP/searchMajorUsers.jsp" method="post">

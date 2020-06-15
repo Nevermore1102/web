@@ -13,23 +13,22 @@
     <link rel="stylesheet" href="<%=path%>/CSS/HealthCodeLoginCSS.css">
 </head>
 <body style="background: #444444">
-<div class="login">
+<div class="login2">
     <div class="account">
         <div class="logo">系统管理员管理界面</div>
-        <form action="<%=path%>/JSP/modifyUsers.jsp" method="post">
+        <form action="<%=path%>/JSP/StudentInfoManage.jsp" method="post">
             <div class="login_btn">
-                <input id="manage" value="信息管理" type="submit">
-
+                <input id="manageStudent" value="学生信息管理" type="submit">
             </div>
         </form>
-        <form action="<%=path%>/JSP/searchUsers.jsp" method="post">
+        <form action="<%=path%>/JSP/TeacherInfoManage.jsp" method="post">
             <div class="login_btn">
-                <input id="数据查询" value="师生打卡情况查询" type="submit">
+                <input id="manageTeacher" value="老师信息管理" type="submit">
             </div>
         </form>
-        <form action="<%=path%>/JSP/showAllUsersHealthyCode.jsp" method="post">
+        <form action="../dataStatisticsServlet" method="post">
             <div class="login_btn">
-                <input id="全校打卡情况统计" value="全校打卡情况统计" type="submit">
+                <input id="data_statistics" value="师生打卡数据统计" type="submit">
             </div>
         </form>
     </div>

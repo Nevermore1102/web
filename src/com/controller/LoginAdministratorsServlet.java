@@ -38,6 +38,9 @@ public class LoginAdministratorsServlet extends HttpServlet {
             rd.forward(request,response);
         }
         else if(password.equals((teacher.getPassword())) && teacher.getRole().equals("院级管理员")){
+
+            request.setAttribute("college",teacher.getCollege());
+            System.out.println("aaaaaaaaaaaa"+teacher.getCollege());
             RequestDispatcher rd = request.getRequestDispatcher("/JSP/majorAdministrators.jsp");
             rd.forward(request,response);
         }
